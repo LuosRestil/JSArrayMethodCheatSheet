@@ -74,9 +74,9 @@ let joined = nums.join('-');
 // ***** .sort(?sortingFunction) *****
 // Compares elements and sorts them according to return value of sorting function. Returns sorted array.
 // nums.sort();
-// if a - b < 0, a comes before b
-// if a - b === 0, the elements are left where they are with respect to each other
-// if a - b > 0, b comes before a
+// sorting function negative return value => a comes before b
+// sorting function positive return value => b comes before a
+// sorting function return value of 0 => do nothing
 // nums.sort((a, b) => a - b);
 // nums.sort((a, b) => {
 //   if (a === 3 && b !== 3) {
