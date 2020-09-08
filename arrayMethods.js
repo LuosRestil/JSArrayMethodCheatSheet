@@ -7,21 +7,17 @@ let nums = [1, 2, 3, 4, 5];
 // ***** .every(callback) *****
 // Checks to see if something is true of all elements in an array.
 // Returns boolean
-function greaterThanThree(elem) {
-  return elem > 3;
-}
-
-let allAreGreaterThanThree = nums.every(greaterThanThree);
+let allAreGreaterThanThree = nums.every(num => num > 3);
 // console.log(allAreGreaterThanThree);
-let allAreGreaterThanZero = nums.every(elem => elem > 0);
+let allAreGreaterThanZero = nums.every(num => num > 0);
 // console.log(allAreGreaterThanZero);
 
 // ***** .some(callback) *****
 // Checks to see if something is true of any elements in an array.
 // Returns boolean
-let someAreGreaterThanThree = nums.some(elem => elem > 3);
+let someAreGreaterThanThree = nums.some(num => num > 3);
 // console.log(someAreGreaterThanThree);
-let someAreGreaterThanFive = nums.some(elem => elem > 5);
+let someAreGreaterThanFive = nums.some(num => num > 5);
 // console.log(someAreGreaterThanFive);
 
 // ***** .map(callback) *****
@@ -96,12 +92,21 @@ let joined = nums.join('-');
 // Does just what it sounds like. Reverses array in place and returns reversed array.
 // nums.reverse();
 
-// ***** .splice(start, ?deleteCount, ?items) *****
+// ***** .splice(start, deleteCount, ?items) *****
 // Inserts, deletes, or replaces elements. Returns deleted elements.
 // nums.splice(1, 0, 'hello');
 // nums.splice(2, 1);
 // nums.splice(2, 2, 'go', 'away');
 
+// ***** chaining methods *****
+let chained = nums
+  .map(x => typeof(x) == 'string' ? x.toUpperCase() : x * 100)
+  .slice(1)
+  .join('***');
+// console.log(chained);
+
 console.log(nums);
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+// https://github.com/LuosRestil/JSArrayMethodCheatSheet
